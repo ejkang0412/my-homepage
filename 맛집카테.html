@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리 학교 주변 맛집</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 기본 스타일 */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #FF6347; /* Tomato 색상 */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+            nav ul li {
+                display: inline;
+                margin: 0 15px;
+            }
+
+                nav ul li a {
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+
+                    nav ul li a:hover {
+                        color: #FFD700; /* 금색으로 hover 효과 */
+                    }
+
+        /* 카테고리 버튼 */
+        #categories {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+            #categories button {
+                padding: 10px 20px;
+                margin: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                border: none;
+                background-color: #FF6347;
+                color: white;
+                border-radius: 5px;
+            }
+
+                #categories button:hover {
+                    background-color: #FF4500; /* Hover 효과 */
+                }
+
+        /* 맛집 리스트 */
+        #restaurants {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .restaurant {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+            .restaurant:hover {
+                transform: scale(1.05);
+            }
+
+            .restaurant img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            .restaurant h3 {
+                font-size: 22px;
+                margin: 15px 0;
+                padding: 0 10px;
+            }
+
+            .restaurant p {
+                padding: 0 10px;
+                font-size: 16px;
+                color: #555;
+            }
+
+            .restaurant button {
+                width: 100%;
+                padding: 10px;
+                background-color: #FF6347;
+                border: none;
+                color: white;
+                font-size: 18px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+                .restaurant button:hover {
+                    background-color: #FF4500;
+                }
+
+        /* 푸터 스타일 */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>우리 학교 주변 맛집</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">홈</a></li>
+                <li><a href="#restaurants">맛집 리스트</a></li>
+                <li><a href="#about">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>맛집 추천</h2>
+            <p>우리 학교 주변의 인기 맛집과 추천 메뉴를 소개합니다.</p>
+        </section>
+
+        <!-- 카테고리 버튼 -->
+        <section id="categories">
+            <button onclick="showCategory('korean')">한식</button>
+            <button onclick="showCategory('chicken')">치킨</button>
+            <button onclick="showCategory('western')">양식</button>
+            <button onclick="showCategory('cafe')">카페</button>
+            <button onclick="showCategory('chinese')">중식</button>
+            <button onclick="showCategory('japanese')">일식</button>
+            <button onclick="showCategory('foreign')">해외요리</button>
+        </section>
+
+        <!-- 맛집 리스트 -->
+        <section id="restaurants">
+            <div class="restaurant korean">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD2uEj8nf0PqAsNRXTyc3_kxJzzdJSbISjwA&s" alt="맛집1">
+                <h3>옛날돈까스 엄마집</h3>
+                <p>위치: 경기도 수원시 장안구 연무동 234-9</p>
+                <p>대표 메뉴: 옛날돈까스 (10,000원)</p>
+                <p>주문즉시 반죽하여 튀긴 옛날돈까스! 하루 한정판매니 빠르게 방문 요망.</p>
+                <button onclick="showDetails('옛날돈까스 엄마집')">더 보기</button>
+            </div>
+
+            <div class="restaurant korean">
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAxMjFfMjM3%2FMDAxNzA1Nzk4NTMxODI1.zHQKBs1x8YvzYRIfqbys_tBogPE6jUjnW_C-nFs_L8sg.lLQG07mYySQEOciHSr551vif4CUQy6D69sTqySj_S-4g.JPEG.93113hurm%2FKakaoTalk_20240121_094459136_04.jpg&type=sc960_832" alt="맛집2">
+                <h3>전주콩나물국밥</h3>
+                <p>위치: 경기 수원시 장안구 광교산로138번길 1 2층</p>
+                <p>대표 메뉴: 얼큰순두부콩나물국밥 (8,000원)</p>
+                <p>연무동 갓성비. 학교 정문에서 너무 가까운 위치. 해장을 원한다면 여기로 뛰어가시길..</p>
+                <button onclick="showDetails('전주콩나물국밥')">더 보기</button>
+            </div>
+
+            <div class="restaurant chicken">
+                <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20190123_31%2F1548231189985JCMvo_JPEG%2FoVV7MoDgXezBrHrOtoawrE7A.jpeg.jpg" alt="맛집2">
+                <h3>광교치킨</h3>
+                <p>위치: 경기 수원시 장안구 광교산로 136</p>
+                <p>대표 메뉴: 반반치킨 (15,000원)</p>
+                <p>튀김이 바삭하고 살이 야들해요... 후라이드와 양념 후회 없습니다. 꼭. 맥주가 땡기는 날엔! 추가적으로 수요일은 휴무입니다.</p>
+                <button onclick="showDetails('전주콩나물국밥')">더 보기</button>
+            </div>
+
+            <!-- 추가 맛집 카테고리 섹션 -->
+        </section>
+
+        <section id="about">
+            <h2>이 사이트에 대해</h2>
+            <p>이 사이트는 학교 근처에서 즐길 수 있는 맛집과 그들의 대표 메뉴를 소개하는 웹사이트입니다.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 우리학교 맛집. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // 각 카테고리를 클릭했을 때 해당 카테고리 맛집만 표시
+        function showCategory(category) {
+            var restaurants = document.querySelectorAll('.restaurant');
+            restaurants.forEach(function(restaurant) {
+                if (restaurant.classList.contains(category)) {
+                    restaurant.style.display = 'block';
+                } else {
+                    restaurant.style.display = 'none';
+                }
+            });
+        }
+
+        function showDetails(restaurantName) {
+            alert(restaurantName + "의 더 많은 정보를 확인하세요.");
+        }
+    </script>
+</body>
+</html>
